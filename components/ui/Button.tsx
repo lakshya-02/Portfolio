@@ -4,8 +4,9 @@ import { cn } from "@/lib/utils";
 
 const variants = {
   primary:
-    "bg-pink text-black hover:bg-pink/90 hover:shadow-[0_0_24px_rgba(255,46,136,0.35)]",
-  outline: "border border-line text-ink hover:border-pink hover:text-pink",
+    "bg-pink text-white hover:bg-pink/90 hover:shadow-[0_0_28px_-4px_rgba(209,25,95,0.6)]",
+  outline:
+    "border border-white/15 bg-white/[0.02] text-ink backdrop-blur-sm hover:border-blue/60 hover:text-blue hover:shadow-[0_0_22px_-6px_rgba(47,143,230,0.45)]",
   ghost: "text-ink-muted hover:text-ink",
 } as const;
 

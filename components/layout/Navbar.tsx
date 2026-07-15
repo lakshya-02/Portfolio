@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/Container";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-void/80 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-white/[0.04] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] backdrop-blur-xl">
       <Container className="flex h-16 items-center justify-between">
         <Link
           href="/"
@@ -46,7 +46,7 @@ export function Navbar() {
       {open && (
         <nav
           aria-label="Primary mobile"
-          className="border-t border-line bg-void md:hidden"
+          className="border-t border-white/10 bg-black/70 backdrop-blur-xl md:hidden"
         >
           <ul className="flex flex-col px-5 py-4">
             {siteConfig.navLinks.map((link) => (

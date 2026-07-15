@@ -4,15 +4,17 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { SocialLinks } from "@/components/layout/SocialLinks";
+import { GlowOrbs } from "@/components/ui/GlowOrbs";
 import { Reveal } from "@/components/motion/Reveal";
 
 const inputClasses =
-  "w-full rounded-md border border-line bg-void px-4 py-3 text-sm text-ink placeholder:text-ink-muted/50 focus:border-pink focus:outline-none";
+  "w-full rounded-md border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-ink placeholder:text-ink-muted/50 transition-colors focus:border-pink focus:bg-white/[0.04] focus:outline-none";
 
 export function ContactCTA() {
   const { fields } = siteConfig.contact;
   return (
-    <section id="contact" className="scroll-mt-24 py-24 sm:py-32">
+    <section id="contact" className="relative scroll-mt-24 py-24 sm:py-32">
+      <GlowOrbs className="opacity-70" />
       <Container>
         <SectionHeading
           eyebrow={siteConfig.sections.contact.eyebrow}

@@ -11,7 +11,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "group relative rounded-lg border border-line bg-panel p-6 transition-colors duration-300 hover:border-pink/60 sm:p-8",
+        "group relative rounded-lg border border-white/10 bg-white/[0.03] p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-md transition-colors duration-300 hover:border-pink/50 hover:bg-white/[0.05] sm:p-8",
         className,
       )}
     >

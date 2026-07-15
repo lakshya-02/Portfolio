@@ -1,11 +1,13 @@
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { GlowOrbs } from "@/components/ui/GlowOrbs";
 import { Reveal } from "@/components/motion/Reveal";
 
 export function Hero() {
   return (
-    <section className="border-b border-line">
+    <section className="relative border-b border-line">
+      <GlowOrbs />
       <Container className="flex min-h-[calc(100svh-4rem)] flex-col justify-center py-24">
         <Reveal>
           <p className="mb-6 flex items-center gap-3 text-sm text-ink-muted">
