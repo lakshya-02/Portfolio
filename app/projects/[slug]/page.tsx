@@ -63,12 +63,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           ))}
         </div>
         <div className="mt-12 flex flex-wrap gap-4">
-          <Button href={project.links.live}>
-            {siteConfig.projectDetail.live}
-          </Button>
-          <Button href={project.links.source} variant="outline">
-            {siteConfig.projectDetail.source}
-          </Button>
+          {project.links.live && (
+            <Button href={project.links.live}>
+              {siteConfig.projectDetail.live}
+            </Button>
+          )}
+          {project.links.source && (
+            <Button href={project.links.source} variant="outline">
+              {siteConfig.projectDetail.source}
+            </Button>
+          )}
         </div>
       </Container>
     </article>

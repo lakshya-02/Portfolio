@@ -42,7 +42,7 @@ export const siteConfig: SiteConfig = {
       "I'm Lakshya, a Computer Science undergraduate at SRM University-AP passionate about building immersive experiences with Extended Reality.",
     body: [
       "My work spans educational simulations, immersive games, mobile AR, browser-based AR, and Meta Quest experiences. I enjoy pairing intuitive interaction design with performant real-time 3D systems.",
-      "Beyond development, I mentor junior developers, organize technical communities, and contribute to XR initiatives that help more students explore immersive technology.",
+      "Beyond development, I mentor 15+ developers at Next Tech Lab, co-organized a nationwide game jam across 5+ universities, and volunteer with Intercollegiate XR's global network of 50+ university clubs. Along the way: XR Track Winner at HackSRM 7.0, 1st at ImmersiveX Ideathon, 3rd at 9Hacks with ScanSpace, and MongoDB Associate Developer certified.",
     ],
   },
   projectsCta: { label: "View all projects", href: "/projects" },

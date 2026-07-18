@@ -118,6 +118,23 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "endless-puzzle",
+    title: "Endless Puzzle",
+    summary:
+      "A portrait mobile puzzle game with runtime-generated prompts challenging players to match falling 3D objects by real color and shape.",
+    description: [
+      "Designed a portrait puzzle game with runtime-generated prompts that challenge players to match falling 3D objects by real color and shape.",
+      "Built JSON-driven content, challenge scaling, object pooling, touch raycast input, scoring, timer rewards/penalties, menu, HUD, restart, and game-over screens.",
+    ],
+    tags: ["Unity", "C#", "JSON", "Object Pooling", "Android"],
+    year: "2026",
+    featured: false,
+    links: {
+      live: "",
+      source: "https://github.com/lakshya-02",
+    },
+  },
+  {
     slug: "unity-ui-bridge",
     title: "Unity UI Bridge",
     summary:
