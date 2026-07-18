@@ -3,11 +3,11 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { SocialLinks } from "@/components/layout/SocialLinks";
+import { socialIcons } from "@/components/layout/SocialLinks";
 import { Reveal } from "@/components/motion/Reveal";
 
 const inputClasses =
-  "w-full rounded-md border border-line bg-void px-4 py-3 text-sm text-ink placeholder:text-ink-muted/50 focus:border-pink focus:outline-none";
+  "w-full rounded-md border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-ink placeholder:text-ink-muted/50 transition-colors focus:border-pink focus:bg-white/[0.04] focus:outline-none";
 
 export function ContactCTA() {
   const { fields } = siteConfig.contact;
@@ -29,7 +29,21 @@ export function ContactCTA() {
             >
               {siteConfig.email}
             </a>
-            <SocialLinks className="mt-8" />
+            <div className="mt-8 flex flex-wrap gap-3">
+              {siteConfig.socialLinks.map((link) => {
+                const Icon = socialIcons[link.icon];
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="inline-flex items-center gap-2.5 rounded-lg border border-white/10 bg-white/[0.05] px-4 py-2.5 text-sm font-medium text-ink backdrop-blur-sm transition-colors hover:border-pink/50 hover:text-pink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink"
+                  >
+                    <Icon className="size-5" />
+                    {link.label}
+                  </a>
+                );
+              })}
+            </div>
           </Reveal>
           <Reveal delay={0.1}>
             <Card>

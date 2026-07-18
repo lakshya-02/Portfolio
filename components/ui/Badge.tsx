@@ -9,15 +9,18 @@ const variants = {
 export function Badge({
   children,
   variant = "default",
+  className,
 }: {
   children: ReactNode;
   variant?: keyof typeof variants;
+  className?: string;
 }) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium",
+        "inline-flex items-center rounded-full border bg-white/[0.03] px-3 py-1 text-xs font-medium backdrop-blur-sm",
         variants[variant],
+        className,
       )}
     >
       {children}

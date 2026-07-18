@@ -22,13 +22,13 @@ export interface SiteConfig {
   headline: string;
   headlineAccent: string;
   tagline: string;
-  availability: string;
   email: string;
   footerNote: string;
   skipToContent: string;
   navLinks: NavLink[];
   socialLinks: SocialLink[];
   heroCtas: { primary: NavLink; secondary: NavLink };
+  heroImage: { src: string; alt: string };
   sections: {
     about: SectionMeta;
     projects: SectionMeta;
@@ -59,8 +59,17 @@ export interface Project {
   links: { live: string; source: string };
 }
 
+export type SkillIconId =
+  | "monitor"
+  | "server"
+  | "code"
+  | "wrench"
+  | "palette"
+  | "shield";
+
 export interface SkillGroup {
   category: string;
+  icon: SkillIconId;
   skills: string[];
 }
 

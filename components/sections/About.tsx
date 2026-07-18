@@ -7,27 +7,25 @@ export function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-24 border-b border-line py-24 sm:py-32"
+      className="scroll-mt-24 py-24 sm:py-32"
     >
       <Container>
         <SectionHeading
           eyebrow={siteConfig.sections.about.eyebrow}
           title={siteConfig.sections.about.title}
         />
-        <div className="grid gap-12 md:grid-cols-[1.1fr_0.9fr]">
-          <Reveal>
-            <p className="font-display text-2xl font-medium leading-snug sm:text-3xl">
-              {siteConfig.about.intro}
-            </p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="space-y-5 leading-relaxed text-ink-muted">
-              {siteConfig.about.body.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-            </div>
-          </Reveal>
-        </div>
+        <Reveal>
+          <p className="max-w-4xl font-display text-2xl font-medium leading-snug sm:text-3xl">
+            {siteConfig.about.intro}
+          </p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <div className="mt-10 grid gap-8 leading-relaxed text-ink-muted md:grid-cols-2">
+            {siteConfig.about.body.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

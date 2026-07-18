@@ -1,15 +1,14 @@
 import type { SiteConfig } from "@/lib/types";
 
 export const siteConfig: SiteConfig = {
-  name: "Your Name",
-  role: "Software Engineer",
-  headline: "Building bold digital products with",
-  headlineAccent: "intent",
+  name: "Lakshya Singh",
+  role: "XR & Game Developer",
+  headline: "Building immersive worlds with Unity &",
+  headlineAccent: "Extended Reality",
   tagline:
-    "Placeholder tagline — a short statement about the work you do, who you do it for, and the standard you hold it to.",
-  availability: "Available for new projects",
-  email: "hello@example.com",
-  footerNote: "© 2026 Your Name — a portfolio template awaiting real content.",
+    "I create cross-platform XR, VR, AR, and game experiences focused on performance, interaction design, and polished user experience.",
+  email: "lakshya.singh2706@gmail.com",
+  footerNote: "© 2026 Lakshya Singh — Building immersive systems that make complex ideas feel intuitive.",
   skipToContent: "Skip to content",
   navLinks: [
     { label: "About", href: "/#about" },
@@ -19,13 +18,17 @@ export const siteConfig: SiteConfig = {
     { label: "Contact", href: "/#contact" },
   ],
   socialLinks: [
-    { label: "GitHub", href: "#", icon: "github" },
-    { label: "LinkedIn", href: "#", icon: "linkedin" },
-    { label: "Email", href: "mailto:hello@example.com", icon: "mail" },
+    { label: "GitHub", href: "https://github.com/lakshya-02", icon: "github" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/lakshya-singh-2833a2328", icon: "linkedin" },
+    { label: "Email", href: "mailto:lakshya.singh2706@gmail.com", icon: "mail" },
   ],
   heroCtas: {
     primary: { label: "View projects", href: "/projects" },
     secondary: { label: "Get in touch", href: "/#contact" },
+  },
+  heroImage: {
+    src: "/images/tarot-card.jpg",
+    alt: "Illustrated portrait in a red robe against a pink-lit backdrop",
   },
   sections: {
     about: { eyebrow: "About", title: "A short introduction." },
@@ -36,10 +39,10 @@ export const siteConfig: SiteConfig = {
   },
   about: {
     intro:
-      "Placeholder pull-quote: one confident sentence about the kind of problems you love to solve and why.",
+      "I'm Lakshya, a Computer Science undergraduate at SRM University-AP passionate about building immersive experiences with Extended Reality.",
     body: [
-      "Placeholder paragraph one. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Describe your background, your craft, and what drives the work — two or three sentences at most.",
-      "Placeholder paragraph two. Sed do eiusmod tempor incididunt ut labore. A second short paragraph for values, approach, or what you're exploring right now.",
+      "My work spans educational simulations, immersive games, mobile AR, browser-based AR, and Meta Quest experiences. I enjoy pairing intuitive interaction design with performant real-time 3D systems.",
+      "Beyond development, I mentor 15+ developers at Next Tech Lab, co-organized a nationwide game jam across 5+ universities, and volunteer with Intercollegiate XR's global network of 50+ university clubs. Along the way: XR Track Winner at HackSRM 7.0, 1st at ImmersiveX Ideathon, 3rd at 9Hacks with ScanSpace, and MongoDB Associate Developer certified.",
     ],
   },
   projectsCta: { label: "View all projects", href: "/projects" },
@@ -50,9 +53,9 @@ export const siteConfig: SiteConfig = {
     source: "View source",
   },
   contact: {
-    body: "Placeholder invitation — say how you like to be contacted and what kinds of projects or roles you're open to.",
+    body: "I'm currently looking for XR Software Engineering opportunities where I can build impactful spatial computing products. If you have an interesting project or role, let's connect!",
     formNote:
-      "This form is a placeholder. Submission wiring is added when the template gets real content.",
+      "This form is currently a template. You can reach out directly via email.",
     fields: {
       name: "Name",
       email: "Email",

@@ -11,7 +11,7 @@ export function FeaturedProjects() {
   return (
     <section
       id="projects"
-      className="scroll-mt-24 border-b border-line py-24 sm:py-32"
+      className="scroll-mt-24 py-24 sm:py-32"
     >
       <Container>
         <SectionHeading
@@ -19,11 +19,8 @@ export function FeaturedProjects() {
           title={siteConfig.sections.projects.title}
         />
         <StaggerGroup className="grid gap-5 md:grid-cols-2">
-          {featured.map((project, index) => (
-            <StaggerItem
-              key={project.slug}
-              className={index === 0 ? "md:col-span-2" : undefined}
-            >
+          {featured.map((project) => (
+            <StaggerItem key={project.slug}>
               <ProjectCard project={project} />
             </StaggerItem>
           ))}
