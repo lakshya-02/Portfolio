@@ -4,7 +4,7 @@ import { siteConfig } from "@/data/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line py-12">
+    <footer className="py-12">
       <Container className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
         <div>
           <p className="flex items-center gap-2 font-display font-bold">

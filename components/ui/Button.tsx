@@ -4,9 +4,9 @@ import { cn } from "@/lib/utils";
 
 const variants = {
   primary:
-    "bg-pink text-white hover:bg-pink/90 hover:shadow-[0_0_28px_-4px_rgba(209,25,95,0.6)]",
+    "bg-pink text-white hover:bg-pink/90 hover:shadow-[0_0_28px_-4px_rgba(255,46,136,0.6)]",
   outline:
-    "border border-white/15 bg-white/[0.02] text-ink backdrop-blur-sm hover:border-blue/60 hover:text-blue hover:shadow-[0_0_22px_-6px_rgba(47,143,230,0.45)]",
+    "border border-white/15 bg-white/[0.04] text-ink backdrop-blur-sm backdrop-saturate-150 hover:border-blue/60 hover:text-blue hover:shadow-[0_0_22px_-6px_rgba(63,169,255,0.45)]",
   ghost: "text-ink-muted hover:text-ink",
 } as const;
 
@@ -24,7 +24,7 @@ export function Button({
   children,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink",
+    "inline-flex items-center justify-center gap-2 rounded-md px-7 py-3.5 text-base font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink",
     variants[variant],
     className,
   );

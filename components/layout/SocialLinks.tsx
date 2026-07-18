@@ -31,7 +31,7 @@ function MailIcon({ className }: { className?: string }) {
   return <Mail className={className} />;
 }
 
-const icons: Record<
+export const socialIcons: Record<
   SocialIconId,
   ({ className }: { className?: string }) => React.JSX.Element
 > = {
@@ -45,7 +45,7 @@ export function SocialLinks({ className }: { className?: string }) {
   return (
     <ul className={cn("flex items-center gap-5", className)}>
       {siteConfig.socialLinks.map((link) => {
-        const Icon = icons[link.icon];
+        const Icon = socialIcons[link.icon];
         return (
           <li key={link.label}>
             <a
