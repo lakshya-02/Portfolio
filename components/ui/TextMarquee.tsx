@@ -1,24 +1,31 @@
 "use client";
 
 const line1 = [
-  "Unity 6",
+  "Unity",
   "C#",
   "OpenXR",
-  "Meta Quest SDK",
-  "ShaderLab",
+  "Meta SDK",
+  "C++",
   "Spatial Computing",
   "Real-Time 3D",
-  "URP",
+  "Human Computer Interaction",
+  "Python",
+  "IWSDK",
+  "C",
+  "Computer Vision",
+  "JavaScript",
+  "MongoDB",
 ];
 const line2 = [
-  "AR Foundation",
+  "Google ARCore",
+  "Apple ARKit",
   "Gameplay Systems",
+  "HTML/CSS",
   "Graphics Optimization",
-  "Hand Tracking",
+  "MRUK",
   "Passthrough",
-  "GLSL Shaders",
   "Vuforia SDK",
-  "3D Math",
+  "2D/3D Game Development",
 ];
 
 const gradients = [
@@ -41,14 +48,13 @@ function MarqueeLine({ items, reverse }: { items: string[]; reverse?: boolean })
       {doubled.map((item, idx) => (
         <span
           key={idx}
-          className="flex items-center gap-12 font-display text-4xl font-extrabold uppercase tracking-widest sm:text-5xl"
+          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-void/80 px-5 py-2 shadow-[0_8px_32px_rgba(0,0,0,0.7)] backdrop-blur-md"
         >
           <span
-            className={`${gradients[idx % gradients.length]} bg-clip-text text-transparent`}
+            className={`${gradients[idx % gradients.length]} bg-clip-text font-display text-xl font-extrabold uppercase tracking-widest text-transparent sm:text-2xl`}
           >
             {item}
           </span>
-          <span aria-hidden className="size-2.5 rounded-full bg-pink/40" />
         </span>
       ))}
     </div>
@@ -57,7 +63,7 @@ function MarqueeLine({ items, reverse }: { items: string[]; reverse?: boolean })
 
 export function TextMarquee() {
   return (
-    <div className="relative my-12 flex w-full select-none flex-col gap-6 overflow-hidden border-y border-white/[0.06] py-8">
+    <div className="relative my-12 flex w-full select-none flex-col gap-4 overflow-hidden border-y border-white/6 py-5">
       <MarqueeLine items={line1} />
       <MarqueeLine items={line2} reverse />
     </div>

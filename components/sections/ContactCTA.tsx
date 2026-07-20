@@ -91,9 +91,11 @@ export function ContactCTA() {
                   />
                 </div>
                 <Button className="w-full">{fields.submit}</Button>
-                <p className="text-xs text-ink-muted">
-                  {siteConfig.contact.formNote}
-                </p>
+                {siteConfig.contact.formNote && (
+                  <p className="text-xs text-ink-muted">
+                    {siteConfig.contact.formNote}
+                  </p>
+                )}
               </form>
             </Card>
           </Reveal>

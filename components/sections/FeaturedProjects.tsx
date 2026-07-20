@@ -26,7 +26,7 @@ export function FeaturedProjects() {
           ))}
         </StaggerGroup>
         <div className="mt-12">
-          <Button href={siteConfig.projectsCta.href} variant="outline">
+          <Button href={siteConfig.projectsCta.href}>
             {siteConfig.projectsCta.label}
           </Button>
         </div>

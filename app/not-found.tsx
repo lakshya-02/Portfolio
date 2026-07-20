@@ -8,7 +8,6 @@ export default function NotFound() {
       <Container>
         <p aria-hidden className="font-display text-8xl font-bold sm:text-9xl">
           <span className="text-stroke">404</span>
-          <span className="text-pink">.</span>
         </p>
         <h1 className="mt-6 font-display text-3xl font-bold">
           {siteConfig.notFound.title}

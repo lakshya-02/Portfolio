@@ -5,8 +5,8 @@ import { ArrowLeft } from "lucide-react";
 import { projects, getProjectBySlug } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/Container";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { getYouTubeEmbedUrl } from "@/lib/utils";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -33,6 +33,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   if (!project) {
     notFound();
   }
+  const embedUrl = project.links.live
+    ? getYouTubeEmbedUrl(project.links.live)
+    : null;
   return (
     <article className="py-24 sm:py-32">
       <Container className="max-w-3xl">
@@ -43,15 +46,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <ArrowLeft className="size-4" />
           {siteConfig.projectDetail.back}
         </Link>
-        <div className="mt-10 flex flex-wrap items-center gap-3">
-          <span className="text-sm text-ink-muted">{project.year}</span>
-          {project.tags.map((tag) => (
-            <Badge key={tag}>{tag}</Badge>
-          ))}
-        </div>
+        <span className="mt-10 block text-sm text-ink-muted">{project.year}</span>
         <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-6xl">
           {project.title}
-          <span className="text-pink">.</span>
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-ink-muted">
           {project.summary}
@@ -62,8 +59,19 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <p key={index}>{paragraph}</p>
           ))}
         </div>
+        {embedUrl && (
+          <div className="mt-12 aspect-video w-full overflow-hidden rounded-xl border border-line">
+            <iframe
+              src={embedUrl}
+              title={`${project.title} demo`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="size-full"
+            />
+          </div>
+        )}
         <div className="mt-12 flex flex-wrap gap-4">
-          {project.links.live && (
+          {project.links.live && !embedUrl && (
             <Button href={project.links.live}>
               {siteConfig.projectDetail.live}
             </Button>

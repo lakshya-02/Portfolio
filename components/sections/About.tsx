@@ -3,6 +3,18 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
 
+function renderBold(text: string) {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, index) =>
+    index % 2 === 1 ? (
+      <strong key={index} className="font-semibold text-ink">
+        {part}
+      </strong>
+    ) : (
+      part
+    ),
+  );
+}
+
 export function About() {
   return (
     <section
@@ -14,18 +26,15 @@ export function About() {
           eyebrow={siteConfig.sections.about.eyebrow}
           title={siteConfig.sections.about.title}
         />
-        <Reveal>
-          <p className="max-w-4xl font-display text-2xl font-medium leading-snug sm:text-3xl">
-            {siteConfig.about.intro}
-          </p>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <div className="mt-10 grid gap-8 leading-relaxed text-ink-muted md:grid-cols-2">
-            {siteConfig.about.body.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </div>
-        </Reveal>
+        <div className="max-w-2xl space-y-6 text-left text-lg leading-relaxed text-ink-muted">
+          {siteConfig.about.paragraphs.map((paragraph, index) => (
+            <Reveal key={index} delay={index * 0.1}>
+              <p className={index === 0 ? "font-display text-3xl font-medium text-ink sm:text-4xl" : undefined}>
+                {renderBold(paragraph)}
+              </p>
+            </Reveal>
+          ))}
+        </div>
       </Container>
     </section>
   );

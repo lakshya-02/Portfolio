@@ -21,6 +21,7 @@ export interface SiteConfig {
   role: string;
   headline: string;
   headlineAccent: string;
+  heroEyebrow: string;
   tagline: string;
   email: string;
   footerNote: string;
@@ -36,7 +37,7 @@ export interface SiteConfig {
     experience: SectionMeta;
     contact: SectionMeta;
   };
-  about: { intro: string; body: string[] };
+  about: { paragraphs: string[] };
   projectsCta: NavLink;
   projectsPage: SectionMeta;
   projectDetail: { back: string; live: string; source: string };
