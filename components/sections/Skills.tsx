@@ -1,102 +1,59 @@
+import type { ComponentType, CSSProperties } from "react";
 import {
-  Glasses,
-  Boxes,
-  Globe,
-  MousePointer2,
-  Camera,
-  Radar,
-  ScanLine,
-  Scan,
-  Braces,
-  Eye,
-  Hand,
-  Hash,
-  Gamepad2,
-  Atom,
-  Keyboard,
-  PenTool,
-  LayoutGrid,
-  Layers3,
-  Sparkles,
-  Paintbrush,
-  Zap,
-  SlidersHorizontal,
-  Layers,
-  EyeOff,
-  Terminal,
-  TerminalSquare,
-  Code2,
-  FileCode,
-  Palette,
-  Database,
-  Box,
-  Cpu,
-  GitBranch,
-  Component,
-  ScanEye,
-  Bug,
-  Smartphone,
-  MonitorSmartphone,
-  Usb,
-  Code,
-  type LucideIcon,
-} from "lucide-react";
+  SiUnity,
+  SiSharp,
+  SiC,
+  SiCplusplus,
+  SiPython,
+  SiJavascript,
+  SiHtml5,
+  SiCss,
+  SiThreedotjs,
+  SiGithub,
+  SiBlender,
+  SiOpencv,
+  SiMongodb,
+  SiAndroid,
+  SiOculus,
+  SiSidequest,
+  SiGoogle,
+  SiPostgresql,
+} from "react-icons/si";
 import { skillGroups } from "@/data/skills";
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Card } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
 
-const skillIcons: Record<string, LucideIcon> = {
-  "Meta Quest SDK": Glasses,
-  OpenXR: Boxes,
-  WebXR: Globe,
-  "XR Interaction Toolkit": MousePointer2,
-  "AR Foundation": Camera,
-  "Google ARCore": Radar,
-  "Vuforia SDK": ScanLine,
-  MindAR: Scan,
-  IWSDK: Braces,
-  "Passthrough Dev": Eye,
-  "Hand Tracking": Hand,
-  "Unity 6": Boxes,
-  "C#": Hash,
-  "Gameplay Systems": Gamepad2,
-  Physics: Atom,
-  "New Input System": Keyboard,
-  ProBuilder: PenTool,
-  "UI Systems": LayoutGrid,
-  URP: Layers3,
-  ShaderLab: Sparkles,
-  GLSL: Braces,
-  "Shader Programming": Paintbrush,
-  "Real-Time Rendering": Zap,
-  "Dynamic LOD": SlidersHorizontal,
-  "Draw Call Batching": Layers,
-  "Occlusion Culling": EyeOff,
-  C: Terminal,
-  "C++": TerminalSquare,
-  Python: Code2,
-  JavaScript: Braces,
-  HTML: FileCode,
-  CSS: Palette,
-  SQL: Database,
-  "Three.js": Box,
-  "Unity Editor": Cpu,
-  "Git & GitHub": GitBranch,
-  Blender: Component,
-  OpenCV: ScanEye,
-  MongoDB: Database,
-  RenderDoc: Bug,
-  SideQuest: Smartphone,
-  "Quest Dev Hub": MonitorSmartphone,
-  ADB: Usb,
-  "VS Code": Code,
-};
+type IconComponent = ComponentType<{
+  className?: string;
+  style?: CSSProperties;
+}>;
 
-const defaultSkillIcon: LucideIcon = Sparkles;
+// Only skills with a real (or close stand-in) brand logo get an icon.
+// `color` is the official brand hex — omitted where the real logo is
+// monochrome (renders white to match the dark theme).
+const skillIcons: Record<string, { icon: IconComponent; color?: string }> = {
+  "Meta Quest SDK": { icon: SiOculus }, // legacy Oculus mark, closest available
+  "Google ARCore": { icon: SiGoogle, color: "#4285F4" }, // Google mark, not ARCore-specific
+  "Unity 6": { icon: SiUnity },
+  "C#": { icon: SiSharp, color: "#239120" },
+  C: { icon: SiC, color: "#A8B9CC" },
+  "C++": { icon: SiCplusplus, color: "#00599C" },
+  Python: { icon: SiPython, color: "#3776AB" },
+  JavaScript: { icon: SiJavascript, color: "#F7DF1E" },
+  HTML: { icon: SiHtml5, color: "#E34F26" },
+  CSS: { icon: SiCss, color: "#1572B6" },
+  SQL: { icon: SiPostgresql, color: "#4169E1" },
+  "Three.js": { icon: SiThreedotjs },
+  "Unity Editor": { icon: SiUnity },
+  "Git & GitHub": { icon: SiGithub },
+  Blender: { icon: SiBlender, color: "#E87D0D" },
+  OpenCV: { icon: SiOpencv, color: "#5C3EE8" },
+  MongoDB: { icon: SiMongodb, color: "#47A248" },
+  SideQuest: { icon: SiSidequest },
+  ADB: { icon: SiAndroid, color: "#3DDC84" }, // Android mark, stands in for the debug bridge
+};
 
 export function Skills() {
   return (
@@ -109,34 +66,38 @@ export function Skills() {
           eyebrow={siteConfig.sections.skills.eyebrow}
           title={siteConfig.sections.skills.title}
         />
-        <StaggerGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-2 md:gap-8">
           {skillGroups.map((group) => (
-            <StaggerItem key={group.category}>
-              <Card className="h-full">
-                <div className="flex items-center gap-2.5">
-                  <span aria-hidden className="size-2 bg-pink" />
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-ink-muted">
-                    {group.category}
-                  </h3>
-                </div>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {group.skills.map((skill) => {
-                    const Icon = skillIcons[skill] ?? defaultSkillIcon;
-                    return (
-                      <Badge
-                        key={skill}
-                        className="gap-1.5 text-white transition-all duration-300 hover:-translate-y-0.5 hover:!border-pink/50 hover:!text-pink hover:shadow-[0_0_16px_-4px_rgba(255,46,136,0.5)]"
-                      >
-                        <Icon className="size-3.5" />
-                        {skill}
-                      </Badge>
-                    );
-                  })}
-                </div>
-              </Card>
-            </StaggerItem>
+            <div key={group.category}>
+              <div className="flex items-center gap-2.5">
+                <span aria-hidden className="size-2 bg-pink" />
+                <h3 className="text-sm font-bold uppercase tracking-wider text-ink-muted">
+                  {group.category}
+                </h3>
+              </div>
+              <StaggerGroup className="mt-5 grid grid-cols-3 gap-3 sm:grid-cols-4">
+                {group.skills.map((skill) => {
+                  const entry = skillIcons[skill];
+                  return (
+                    <StaggerItem key={skill}>
+                      <div className="group flex h-full min-h-[4.5rem] flex-col items-center justify-center gap-2 rounded-lg border border-line bg-white/[0.02] p-3 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-pink/50 hover:bg-white/[0.05] hover:shadow-[0_0_16px_-6px_rgba(255,46,136,0.45)]">
+                        {entry && (
+                          <entry.icon
+                            className="size-5 text-white transition-transform duration-300 group-hover:scale-110"
+                            style={entry.color ? { color: entry.color } : undefined}
+                          />
+                        )}
+                        <span className="text-xs font-medium text-ink-muted transition-colors duration-300 group-hover:text-white">
+                          {skill}
+                        </span>
+                      </div>
+                    </StaggerItem>
+                  );
+                })}
+              </StaggerGroup>
+            </div>
           ))}
-        </StaggerGroup>
+        </div>
       </Container>
     </section>
   );

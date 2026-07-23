@@ -24,17 +24,6 @@ export const experienceItems: ExperienceItem[] = [
     ],
   },
   {
-    role: "XR & Game Developer; Interim Board Member",
-    org: "Next Tech Lab, SRM University-AP - Amaravati, India (On-Site)",
-    period: "Oct 2024 - Present",
-    kind: "work",
-    bullets: [
-      "Built XR and game prototypes in Unity.",
-      "Applied spatial interaction and performance optimization practices.",
-      "Mentored 15+ developers and led technical sessions.",
-    ],
-  },
-  {
     role: "Club Volunteer",
     org: "Intercollegiate XR (ICXR) - Global XR Community (Remote)",
     period: "Dec 2025 - Present",
@@ -42,6 +31,18 @@ export const experienceItems: ExperienceItem[] = [
     bullets: [
       "Represented Next Tech Lab across 50+ XR clubs.",
       "Supported cross-campus immersive technology initiatives.",
+    ],
+  },
+  {
+    role: "XR & Game Developer; Interim Board Member",
+    org: "Next Tech Lab, SRM University-AP - Amaravati, India (On-Site)",
+    period: "Oct 2024 - Present",
+    kind: "work",
+    link: "https://www.nexttechlabap.in/",
+    bullets: [
+      "Built XR and game prototypes in Unity.",
+      "Applied spatial interaction and performance optimization practices.",
+      "Mentored 15+ developers and led technical sessions.",
     ],
   },
   {

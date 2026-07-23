@@ -80,4 +80,5 @@ export interface ExperienceItem {
   period: string;
   kind: "work" | "education";
   bullets: string[];
+  link?: string;
 }
