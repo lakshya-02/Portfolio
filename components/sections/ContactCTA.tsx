@@ -2,12 +2,9 @@ import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import { socialIcons } from "@/components/layout/SocialLinks";
 import { Reveal } from "@/components/motion/Reveal";
-
-const inputClasses =
-  "w-full rounded-md border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-ink placeholder:text-ink-muted/50 transition-colors focus:border-pink focus:bg-white/[0.04] focus:outline-none";
+import { ContactForm } from "@/components/sections/ContactForm";
 
 export function ContactCTA() {
   const { fields } = siteConfig.contact;
@@ -47,54 +44,12 @@ export function ContactCTA() {
           </Reveal>
           <Reveal delay={0.1}>
             <Card>
-              <form className="space-y-5">
-                <div>
-                  <label
-                    htmlFor="contact-name"
-                    className="mb-2 block text-sm text-ink-muted"
-                  >
-                    {fields.name}
-                  </label>
-                  <input
-                    id="contact-name"
-                    name="name"
-                    type="text"
-                    className={inputClasses}
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="contact-email"
-                    className="mb-2 block text-sm text-ink-muted"
-                  >
-                    {fields.email}
-                  </label>
-                  <input
-                    id="contact-email"
-                    name="email"
-                    type="email"
-                    className={inputClasses}
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="contact-message"
-                    className="mb-2 block text-sm text-ink-muted"
-                  >
-                    {fields.message}
-                  </label>
-                  <textarea
-                    id="contact-message"
-                    name="message"
-                    rows={5}
-                    className={inputClasses}
-                  />
-                </div>
-                <Button className="w-full">{fields.submit}</Button>
-                <p className="text-xs text-ink-muted">
+              <ContactForm fields={fields} />
+              {siteConfig.contact.formNote && (
+                <p className="mt-4 text-xs text-ink-muted">
                   {siteConfig.contact.formNote}
                 </p>
-              </form>
+              )}
             </Card>
           </Reveal>
         </div>

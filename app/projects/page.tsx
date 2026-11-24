@@ -7,7 +7,7 @@ import { ProjectCard } from "@/components/projects/ProjectCard";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
 
 export const metadata: Metadata = {
-  title: siteConfig.projectsPage.title.replace(/\.$/, ""),
+  title: siteConfig.projectsPage.title,
   description: siteConfig.tagline,
 };
 

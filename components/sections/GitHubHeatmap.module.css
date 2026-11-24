@@ -1,0 +1,23 @@
+.figure { container-type: inline-size; margin: 0 0 2rem; max-width: 44rem; }
+.chart { display: grid; grid-template-columns: 3.5ch minmax(0, 1fr); gap: .6ch; padding: 1.5rem 0; font-size: clamp(6px, 1.55cqw, 11px); line-height: 1; }
+.calendar { display: grid; grid-template-rows: 1.8em repeat(7, 1.4em); }
+.month { color: #a6a6a6; align-self: start; }
+.weekdays { display: grid; grid-template-rows: 1.8em repeat(7, 1.4em); color: #a6a6a6; }
+.weekdays span:nth-child(1) { grid-row: 3; }
+.weekdays span:nth-child(2) { grid-row: 5; }
+.weekdays span:nth-child(3) { grid-row: 7; }
+.cell { text-align: center; color: #626262; cursor: default; }
+.cell[data-level="1"] { color: #797979; }
+.cell[data-level="2"] { color: #a2a2a2; }
+.cell[data-level="3"] { color: #cacaca; }
+.cell[data-level="4"] { color: #eeeeee; }
+.caption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; color: #aaa; font-size: .68rem; line-height: 1.6; }
+.legend { white-space: nowrap; }
+.legend span { margin: 0 .4em; }
+.details { margin-top: .75rem; color: #aaa; font-size: .7rem; }
+.details summary { cursor: pointer; width: fit-content; }
+.details summary:focus-visible, .tableScroll:focus-visible { outline: 1px solid #eee; outline-offset: 4px; }
+.details p { margin: .75rem 0; }
+.tableScroll { max-height: 16rem; overflow: auto; }
+.details table { border-collapse: collapse; width: 100%; text-align: left; }
+.details th, .details td { padding: .4rem .5rem; border-bottom: 1px solid #252525; font-weight: 400; }

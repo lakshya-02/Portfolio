@@ -5,14 +5,14 @@ export const projects: Project[] = [
     slug: "scanspace",
     title: "ScanSpace",
     summary:
-      "Mixed Reality object-scanning platform that reconstructs real-world objects into interaction-ready 3D meshes using stable-fast-3D.",
+      "Capture real world objects into optimized 3D Objects for Mixed Reality.",
     description: [
-      "ScanSpace is a Meta Quest 3 Mixed Reality application that captures real-world objects and reconstructs them as textured, interaction-ready 3D meshes with a local Stable Fast 3D pipeline.",
-      "It features an under-30-second capture-to-mesh round trip, fully offline RTX 4080 inference to guarantee privacy and speed, and live glTF loading/spatial preview directly inside the MR scene.",
+      "ScanSpace turns a Meta Quest 3 into a handheld 3D scanner. Point at any real-world object, capture it from a few angles, and the app reconstructs an optimized, game-ready 3D model without ever leaving the headset or touching the cloud.",
+      "The reconstruction pipeline runs through Stable Fast 3D for mesh generation and GLTFast for fast, standards-compliant loading, with custom ShaderLab shaders keeping materials lightweight enough to render live in mixed reality. Every scan stays on-device, so it works fully offline and keeps captured objects private by default.",
+      "Once a scan finishes, the model drops straight into your space as a spatially anchored object you can walk around, resize, and place — turning a physical object into reusable 3D content in minutes instead of hours in a desktop pipeline.",
     ],
     tags: [
       "Unity",
-      "OpenXR",
       "Meta Quest SDK",
       "Stable Fast 3D",
       "GLTFast",
@@ -29,10 +29,10 @@ export const projects: Project[] = [
     slug: "vr-car-driving-simulator",
     title: "VR Car Driving Simulator",
     summary:
-      "A full-scale driving simulator with one-to-one steering-wheel input, realistic vehicle control, and a rendering pipeline optimized for standalone VR.",
+      "VR driving simulator with realistic steering and standalone Meta Quest support.",
     description: [
-      "A full-scale driving simulator built in Unity featuring one-to-one physical steering-wheel input mapping and realistic vehicle dynamics.",
-      "Optimized for performance to maintain a sustained 90 FPS on standalone Meta Quest 2 using dynamic LOD, batching, occlusion culling, and custom URP render settings.",
+      "A standalone VR driving simulator built for Meta Quest, focused on making the steering wheel feel real. Controller rotation maps one-to-one to the in-car wheel, so turning your wrists actually turns the car — no snap-turning, no disconnect between input and motion.",
+      "Under the hood it's a Unity physics-driven vehicle controller tuned for standalone headsets: careful draw-call and shader budgets keep frame time stable so the cockpit stays comfortable to sit in for long sessions, which matters more in VR than almost anything else.",
     ],
     tags: [
       "Unity",
@@ -53,10 +53,9 @@ export const projects: Project[] = [
     slug: "treasure-hunt-ar",
     title: "Treasure Hunt AR",
     summary:
-      "A mobile world-scale AR game where players scan physical environments, discover virtual chests, and collect items by moving through space.",
+      "Mobile AR treasure hunt using world-scale tracking.",
     description: [
-      "A mobile AR game where players scan real-world environments to reveal virtual chest placements and interact with virtual objects in real-world spaces.",
-      "Features physical navigation integrated directly into the gameplay loop, built with AR Foundation, Google ARCore, and Unity.",
+      "A mobile AR treasure hunt that turns whatever room or yard you're standing in into an explorable map. Built with AR Foundation and Google ARCore, it tracks real-world scale so clues and hidden objects stay locked in place as players walk around and look through their phone.",
     ],
     tags: ["Unity", "C#", "AR Foundation", "Google ARCore", "Android"],
     year: "2026",
@@ -70,10 +69,9 @@ export const projects: Project[] = [
     slug: "webar-image-tracking",
     title: "WebAR Image Tracking",
     summary:
-      "A browser-native image-tracking experience with custom GLSL shaders, designed for fast loading and stable real-time marker tracking.",
+      "Browser-based image tracking with fast marker detection and custom shaders.",
     description: [
-      "An installation-free WebAR experience using MindAR, Three.js, and custom GLSL shaders.",
-      "Optimized to deliver sub-two-second asset load times and stable real-time tracking on mobile browsers with zero setup required.",
+      "A browser-only WebAR experience — no app install required. MindAR handles fast image-marker detection straight from the camera feed, Three.js renders the 3D overlay, and custom GLSL shaders keep the tracked content sharp and responsive even on mid-range phones.",
     ],
     tags: ["WebXR", "MindAR", "Three.js", "GLSL", "HTML"],
     year: "2025",
@@ -87,10 +85,9 @@ export const projects: Project[] = [
     slug: "ar-maze",
     title: "AR Maze",
     summary:
-      "A tabletop AR maze that turns mobile device movement into physics-based ball control over a board anchored to a Vuforia target.",
+      "Tabletop AR maze controlled through mobile device tilt.",
     description: [
-      "A physics-driven tabletop AR game that transforms device gyroscope tilt into physical force acting on a virtual ball inside a tracked maze.",
-      "Anchored to Vuforia image targets to ensure high-fidelity tracking, keeping a stable 60 FPS under standard lighting.",
+      "A tabletop AR maze that sits on a printed marker and is steered entirely by tilting the phone. Vuforia keeps the maze locked to the marker with stable image tracking, while the ball's motion runs on real device-gyroscope physics instead of touch input.",
     ],
     tags: ["Unity", "Vuforia SDK", "AR Foundation", "ShaderLab"],
     year: "2025",
@@ -104,10 +101,9 @@ export const projects: Project[] = [
     slug: "illegal-move",
     title: "ILLegal Move",
     summary:
-      "A rule-breaking 2D puzzle platformer where each level changes the rules, built in six days for the StarCade Game Jam.",
+      "Rule-breaking 2D platformer built in six days for StarCade Game Jam.",
     description: [
-      "A creative 2D puzzle platformer that challenges players to experiment, break established game conventions, and adapt as each level introduces unique rules.",
-      "Developed in under a week for the StarCade Game Jam, released for both HTML5 web play and Windows desktop download.",
+      "Built in six days for the StarCade Game Jam, ILLegal Move is a 2D puzzle platformer where the rules themselves are the puzzle — each level quietly breaks or inverts a mechanic you'd just learned, so progress comes from testing what's actually allowed rather than executing a known pattern.",
     ],
     tags: ["Unity", "C#", "WebGL"],
     year: "2026",
@@ -121,10 +117,9 @@ export const projects: Project[] = [
     slug: "endless-puzzle",
     title: "Endless Puzzle",
     summary:
-      "A portrait mobile puzzle game with runtime-generated prompts challenging players to match falling 3D objects by real color and shape.",
+      "Portrait mobile puzzle game with runtime-generated color and shape challenges.",
     description: [
-      "Designed a portrait puzzle game with runtime-generated prompts that challenge players to match falling 3D objects by real color and shape.",
-      "Built JSON-driven content, challenge scaling, object pooling, touch raycast input, scoring, timer rewards/penalties, menu, HUD, restart, and game-over screens.",
+      "A portrait-mode mobile puzzle game where color and shape challenges are generated at runtime rather than hand-authored, so no two sessions play out the same. Levels are driven by JSON-defined content, with object pooling keeping touch input and HUD scoring smooth even as challenges spawn continuously.",
     ],
     tags: ["Unity", "C#", "JSON", "Object Pooling", "Android"],
     year: "2026",
@@ -138,10 +133,9 @@ export const projects: Project[] = [
     slug: "unity-ui-bridge",
     title: "Unity UI Bridge",
     summary:
-      "An open-source pipeline that reconstructs modular Unity uGUI layouts from reference images using local OCR and JSON schemas.",
+      "Local-first tool for rebuilding Unity uGUI layouts from reference images.",
     description: [
-      "An open-source utility that reconstructs modular Unity uGUI layouts directly from design references using a local OCR/CV model and JSON serialization.",
-      "Created with local-first tooling and zero paid APIs, optimized to aid XR developers building complex world-space user interfaces in Unity.",
+      "An open-source, local-first tool that skips manual UI layout work entirely: feed it a reference image or mockup, and an OCR/computer-vision pipeline detects text and UI regions, then generates a modular Unity uGUI hierarchy that matches it — no cloud services, no design handoff friction.",
     ],
     tags: ["Unity", "C#", "Python", "JSON Schema", "OCR/CV"],
     year: "2026",

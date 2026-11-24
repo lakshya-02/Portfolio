@@ -15,6 +15,8 @@ interface ButtonProps {
   variant?: keyof typeof variants;
   className?: string;
   children: ReactNode;
+  type?: "button" | "submit";
+  disabled?: boolean;
 }
 
 export function Button({
@@ -22,9 +24,11 @@ export function Button({
   variant = "primary",
   className,
   children,
+  type = "button",
+  disabled,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-md px-9 py-4 text-lg font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink",
+    "inline-flex items-center justify-center gap-2 rounded-md px-9 py-4 text-lg font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink disabled:cursor-not-allowed disabled:opacity-60",
     variants[variant],
     className,
   );
@@ -36,7 +40,7 @@ export function Button({
     );
   }
   return (
-    <button type="button" className={classes}>
+    <button type={type} disabled={disabled} className={classes}>
       {children}
     </button>
   );

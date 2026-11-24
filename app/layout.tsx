@@ -1,20 +1,17 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { AR_One_Sans, Sora } from "next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
-const arOneSans = AR_One_Sans({
-  weight: "variable",
+const mono = IBM_Plex_Mono({
+  weight: ["400", "500", "600"],
   subsets: ["latin"],
-  variable: "--font-ar-one-sans",
-});
-const sora = Sora({
-  subsets: ["latin"],
-  variable: "--font-sora",
+  variable: "--font-ibm-plex-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${arOneSans.variable} scroll-smooth`}
+      className={`${mono.variable} scroll-smooth`}
     >
       <body className="bg-void font-body text-ink antialiased">
         <MotionProvider>
@@ -40,7 +37,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             {siteConfig.skipToContent}
           </a>
           <Navbar />
-          <main id="main" className="pt-16">
+          <main id="main">
             {children}
           </main>
           <Footer />

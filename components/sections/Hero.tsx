@@ -10,12 +10,16 @@ export function Hero() {
       <Container className="grid min-h-[calc(100svh-4rem)] max-w-none content-center items-start gap-12 py-24 lg:grid-cols-[1fr_1fr] lg:gap-16 lg:px-20 xl:px-28">
         <div className="lg:pt-36">
           <Reveal>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-ink-muted">
+              {siteConfig.heroEyebrow}
+            </p>
+          </Reveal>
+          <Reveal>
             <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl xl:text-7xl">
               {siteConfig.headline}{" "}
               <span className="bg-gradient-to-r from-pink to-blue bg-clip-text text-transparent sm:whitespace-nowrap">
                 {siteConfig.headlineAccent}
               </span>
-              <span className="text-pink">.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
