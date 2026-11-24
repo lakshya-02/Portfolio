@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-void: #000000;
+  --color-void: #0a0a0a;
   --color-line: #2a2a33;
   --color-ink: #f7f7fa;
   --color-ink-muted: #b6b6c2;
@@ -12,33 +12,13 @@
   --color-orange: #ff9640;
   --color-red: #ff5757;
 
-  --font-display: var(--font-sora), sans-serif;
-  --font-body: var(--font-ar-one-sans), sans-serif;
+  --font-display: var(--font-ibm-plex-mono), "Courier New", monospace;
+  --font-body: var(--font-ibm-plex-mono), "Courier New", monospace;
 
-  --animate-marquee: marquee 20s linear infinite;
-  --animate-marquee-reverse: marquee-reverse 20s linear infinite;
-
-  @keyframes marquee {
-    from {
-      transform: translateX(0%);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-
-  @keyframes marquee-reverse {
-    from {
-      transform: translateX(-50%);
-    }
-    to {
-      transform: translateX(0%);
-    }
-  }
 }
 
 ::selection {
-  background: var(--color-pink);
+  background: #b5d4ad;
   color: #000000;
 }
 

@@ -12,11 +12,8 @@ export const siteConfig: SiteConfig = {
   footerNote: "Building immersive experiences through Unity and Extended Reality.",
   skipToContent: "Skip to content",
   navLinks: [
-    { label: "About", href: "/#about" },
+    { label: "Home", href: "/" },
     { label: "Projects", href: "/projects" },
-    { label: "Skills", href: "/#skills" },
-    { label: "Experience", href: "/#experience" },
-    { label: "Contact", href: "/#contact" },
   ],
   socialLinks: [
     { label: "GitHub", href: "https://github.com/lakshya-02", icon: "github" },

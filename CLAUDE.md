@@ -52,7 +52,7 @@ Run the following commands in the workspace root directory:
     /[slug]
       page.tsx          — Dynamic SSG routes for project case studies
 /components
-  /ui                   — Primitives (Button, Badge, Card, SectionHeading, TextMarquee, GlowOrbs)
+  /ui                   — Primitives (Button, Badge, Card, SectionHeading, TextMarquee)
   /motion               — Animation wrappers (Reveal, StaggerGroup)
   /layout               — Global Shell components (Navbar, Footer, SocialLinks)
   /sections             — Page layouts (Hero, About, FeaturedProjects, Skills, Experience, ContactCTA)

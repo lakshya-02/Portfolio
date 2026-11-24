@@ -1,20 +1,10 @@
-import { Container } from "@/components/ui/Container";
-import { SocialLinks } from "@/components/layout/SocialLinks";
 import { siteConfig } from "@/data/site";
 
 export function Footer() {
   return (
-    <footer className="py-12">
-      <Container className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-        <div>
-          <p className="flex items-center gap-2 font-display font-bold">
-            <span aria-hidden className="size-2 bg-pink" />
-            {siteConfig.name}
-          </p>
-          <p className="mt-2 text-sm text-ink-muted">{siteConfig.footerNote}</p>
-        </div>
-        <SocialLinks />
-      </Container>
+    <footer className="mx-auto flex w-[calc(100%-3rem)] max-w-3xl flex-wrap justify-between gap-4 border-t border-white/10 py-8 text-[11px] text-ink-muted">
+      <span>{siteConfig.name} / reality is a starting point.</span>
+      <a href="#main" className="underline underline-offset-4">back to top ↑</a>
     </footer>
   );
 }
