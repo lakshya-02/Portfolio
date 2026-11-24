@@ -4,23 +4,22 @@ export const experienceItems: ExperienceItem[] = [
   {
     role: "Software Engineer Intern",
     org: "Proto Corp Pvt. Ltd. - Visakhapatnam, India (Remote)",
-    period: "Jun 2026 - Present",
+    period: "Jun 2026 - Aug 2026",
     kind: "work",
     bullets: [
-      "Built Unity-based Mixed Reality features.",
-      "Integrated Meta XR and OpenXR SDKs.",
-      "Developed internal dashboard features.",
+      "Developed Mixed Reality applications and ensuring compatibility with Meta Quest.",
+      "Integrated Machine Learning models into a data processing pipeline to generate 3D models from raw scan data.",
+      "Developed web-based dashboard for visualizing and interacting with generated 3D models.",
     ],
   },
   {
-    role: "Research Intern - MR & VR Game Development",
+    role: "Research Intern - Education in XR",
     org: "SRM University-AP - Amaravati, India (Remote)",
     period: "Jun 2026 - Aug 2026",
     kind: "work",
     bullets: [
-      "Built MR/VR learning mechanics in Unity.",
-      "Visualized data structures as interactive 3D objects.",
-      "Designed progression for gameplay-based learning.",
+      "Developed an Gamified Virtual Reality learning application using Unity for Meta Quest , focused on Data Structures and Algorithms.",
+      "Implemented 8+ interactive algorithm simulations within an gameplay-driven virtual classroom.",
     ],
   },
   {
@@ -34,15 +33,15 @@ export const experienceItems: ExperienceItem[] = [
     ],
   },
   {
-    role: "XR & Game Developer; Interim Board Member",
+    role: "Board Member",
     org: "Next Tech Lab, SRM University-AP - Amaravati, India (On-Site)",
     period: "Oct 2024 - Present",
     kind: "work",
     link: "https://www.nexttechlabap.in/",
     bullets: [
-      "Built XR and game prototypes in Unity.",
-      "Applied spatial interaction and performance optimization practices.",
-      "Mentored 15+ developers and led technical sessions.",
+      "Developed XR projects and game prototypes across multiple game engines.",
+      "Designed intuitive spatial interactions and optimized XR experiences for performance and usability.",
+      "Mentored developers and led the organization of Game Jams and Hackathons.",
     ],
   },
   {
@@ -50,10 +49,6 @@ export const experienceItems: ExperienceItem[] = [
     org: "SRM University-AP - Amaravati, India",
     period: "Aug 2024 - Aug 2028",
     kind: "education",
-    bullets: [
-      "Maintained 8.5/10.0 CGPA.",
-      "Contributed to immersive 3D visualization research.",
-      "Earned MongoDB Associate Developer certification.",
-    ],
+    bullets: []
   },
 ];

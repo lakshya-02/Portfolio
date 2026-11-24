@@ -8,42 +8,17 @@ export interface NavLink {
   href: string;
 }
 
-export type SocialIconId = "github" | "linkedin" | "mail" | "twitter";
-
-export interface SocialLink {
-  label: string;
-  href: string;
-  icon: SocialIconId;
-}
-
 export interface SiteConfig {
   name: string;
   role: string;
-  headline: string;
-  headlineAccent: string;
-  heroEyebrow: string;
   tagline: string;
-  email: string;
-  footerNote: string;
   skipToContent: string;
   navLinks: NavLink[];
-  socialLinks: SocialLink[];
-  heroCtas: { primary: NavLink; secondary: NavLink };
-  heroImage: { src: string; alt: string };
-  sections: {
-    about: SectionMeta;
-    projects: SectionMeta;
-    skills: SectionMeta;
-    experience: SectionMeta;
-    contact: SectionMeta;
-  };
-  about: { paragraphs: string[] };
-  projectsCta: NavLink;
+  socialLinks: NavLink[];
   projectsPage: SectionMeta;
   projectDetail: { back: string; live: string; source: string };
   contact: {
     body: string;
-    formNote: string;
     fields: { name: string; email: string; message: string; submit: string };
   };
   notFound: { title: string; body: string; cta: string };
@@ -60,17 +35,8 @@ export interface Project {
   links: { live: string; source: string };
 }
 
-export type SkillIconId =
-  | "monitor"
-  | "server"
-  | "code"
-  | "wrench"
-  | "palette"
-  | "shield";
-
 export interface SkillGroup {
   category: string;
-  icon: SkillIconId;
   skills: string[];
 }
 

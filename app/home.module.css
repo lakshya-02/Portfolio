@@ -27,10 +27,12 @@
 .projectIndex, .year, .tags { color: #92998e; font-size: .65rem; }
 .tags { display: block; }
 .more { display: inline-block; margin-top: 1.2rem; font-size: .75rem; }
-.toolkit > div { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 1rem; padding: .6rem 0; }
-.toolkit dt { color: #d4d9cf; }
-.toolkit dd { margin: 0; font-size: .75rem; }
-.aside { margin-top: 1rem; color: #999e96; font-size: .7rem; }
+.toolkit { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem 1.25rem; }
+.toolkit > div { min-width: 0; border-top: 1px solid #242721; padding-top: .7rem; }
+.toolkit dt { color: #d4d9cf; font-weight: 500; line-height: 1.5; }
+.toolkit dd { margin: .5rem 0 0; font-size: .72rem; line-height: 1.65; }
+.toolkit li { overflow-wrap: anywhere; }
+.toolkit li + li { margin-top: .25rem; }
 .experience details { padding: 1rem 0; border-bottom: 1px solid #242721; }
 .experience summary { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; cursor: pointer; }
 .experience summary strong { color: #d4d9cf; font-weight: 400; }
@@ -66,7 +68,10 @@
   .hero { padding-bottom: 2.5rem; }
   .section { padding-top: 2.75rem; }
   .project { gap: .65rem; }
-  .toolkit > div { grid-template-columns: 1fr; gap: .15rem; }
+  .toolkit { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .experience summary { flex-direction: column; gap: .35rem; }
   .activityColumns { grid-template-columns: 1fr; }
+}
+@media (max-width: 28rem) {
+  .toolkit { grid-template-columns: 1fr; gap: 1.25rem; }
 }

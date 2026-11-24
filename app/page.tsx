@@ -71,11 +71,14 @@ export default async function HomePage() {
             {skillGroups.map((group) => (
               <div key={group.category}>
                 <dt>{group.category}</dt>
-                <dd>{group.skills.join(" · ")}</dd>
+                <dd>
+                  <ul>
+                    {group.skills.map((skill) => <li key={skill}>{skill}</li>)}
+                  </ul>
+                </dd>
               </div>
             ))}
           </dl>
-          <p className={styles.aside}>From spatial tracking and physics-driven interactions to custom shaders, on-device workflows, and browser-based AR.</p>
         </section>
 
         <section id="experience" className={styles.section} aria-labelledby="experience-title">

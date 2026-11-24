@@ -8,9 +8,6 @@
   --color-pink: #ff2e88;
   --color-blue: #3fa9ff;
   --color-yellow: #ffd60a;
-  --color-green: #3ee089;
-  --color-orange: #ff9640;
-  --color-red: #ff5757;
 
   --font-display: var(--font-ibm-plex-mono), "Courier New", monospace;
   --font-body: var(--font-ibm-plex-mono), "Courier New", monospace;
@@ -31,12 +28,4 @@
   .text-stroke {
     color: var(--color-ink);
   }
-}
-
-.glow-pink {
-  box-shadow: 0 0 32px -6px rgba(255, 46, 136, 0.55);
-}
-
-.glow-blue {
-  box-shadow: 0 0 28px -6px rgba(63, 169, 255, 0.5);
 }
