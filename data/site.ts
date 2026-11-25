@@ -4,11 +4,11 @@ export const siteConfig: SiteConfig = {
   name: "Lakshya Singh",
   role: "XR & Game Developer",
   tagline:
-    "I design immersive XR experiences and make some Game in Unity to feel real, even when it's not.",
+    "I design immersive XR experiences and make some Game to feel real, even when it's not.",
   skipToContent: "Skip to content",
   navLinks: [
     { label: "Home", href: "/" },
-    { label: "Projects", href: "/projects" },
+    { label: "Projects", href: "/#work" },
   ],
   socialLinks: [
     { label: "GitHub", href: "https://github.com/lakshya-02" },

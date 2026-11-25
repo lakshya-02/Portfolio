@@ -21,4 +21,4 @@ npx tsc --noEmit
 npm run build
 ```
 
-Read the relevant installed Next.js documentation in `node_modules/next/dist/docs/` before changing Next.js code. Preserve the generated Next.js block in `AGENTS.md`. The current typography is IBM Plex Mono through `next/font/google`, with its license at `public/licenses/IBM-Plex-Mono-OFL.txt`.
+Read the relevant installed Next.js documentation in `node_modules/next/dist/docs/` before changing Next.js code. Preserve the generated Next.js block in `AGENTS.md`. Body text and ASCII art use IBM Plex Mono through `next/font/google`, with its license at `public/licenses/IBM-Plex-Mono-OFL.txt`. Display headings use the system Arial/Helvetica sans-serif stack without an additional font download. Internal page links use `next/link`; external URLs use native anchors.

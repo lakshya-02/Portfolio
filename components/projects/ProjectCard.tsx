@@ -6,14 +6,8 @@ import { Badge } from "@/components/ui/Badge";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <Card className="overflow-hidden">
-
-      <Link
-        href={`/projects/${project.slug}`}
-        className="absolute inset-0 z-10 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink"
-      >
-        <span className="sr-only">{project.title}</span>
-      </Link>
+    <Link href={`/projects/${project.slug}`} aria-labelledby={`project-${project.slug}`} className="block rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pink">
+    <Card className="h-full overflow-hidden">
       <div className="flex h-full flex-col transition-transform duration-300 ease-out group-hover:-translate-y-1.5">
         <div className="flex items-start justify-between">
           <span className="text-xs font-semibold tracking-wider text-ink-muted/80">{project.year}</span>
@@ -21,9 +15,9 @@ export function ProjectCard({ project }: { project: Project }) {
             <ArrowUpRight className="size-4 text-ink-muted transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-pink" />
           </div>
         </div>
-        <h3 className="mt-6 font-display text-2xl font-bold text-white transition-colors duration-300 group-hover:text-pink">
+        <h2 id={`project-${project.slug}`} className="mt-6 font-display text-2xl font-bold text-white transition-colors duration-300 group-hover:text-pink">
           {project.title}
-        </h3>
+        </h2>
         <p className="mt-3 text-base leading-relaxed text-ink-muted">
           {project.summary}
         </p>
@@ -39,5 +33,6 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
     </Card>
+    </Link>
   );
 }

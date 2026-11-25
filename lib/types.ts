@@ -44,7 +44,7 @@ export interface ExperienceItem {
   role: string;
   org: string;
   period: string;
-  kind: "work" | "education";
+  kind: "work" | "education" | "volunteer";
   bullets: string[];
   link?: string;
 }

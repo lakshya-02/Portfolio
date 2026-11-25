@@ -29,11 +29,11 @@ export default async function HomePage() {
           </figure>
           <p className={styles.eyebrow}>reality is a starting point.</p>
           <h1 id="home-title">LAKSHYA SINGH<span aria-hidden="true">_</span></h1>
-          <p className={styles.role}>XR developer · Unity engineer · curious about what comes next</p>
+          <p className={styles.role}>Extended Reality · Unity · curious about what comes next</p>
           <nav className={styles.quickLinks} aria-label="Homepage links">
             <a href="#about">[ about ]</a>
             <a href="#work">[ work ]</a>
-            <a href="#skills">[ tools ]</a>
+            <a href="#skills">[ tech stack ]</a>
             <a href="#activity">[ code ]</a>
             <a href="#contact">[ hello ]</a>
           </nav>
@@ -41,8 +41,8 @@ export default async function HomePage() {
 
         <section id="about" className={styles.about} aria-labelledby="about-title">
           <h2 id="about-title" className="sr-only">About Lakshya</h2>
-          <p>Hey, I&apos;m <strong>Lakshya</strong>. I build games and spatial experiences that turn the room around you into part of the interface. My home base is <strong>Unity and C#</strong>; my playground is AR, VR, and mixed reality.</p>
-          <p>I&apos;m studying Computer Science at <strong>SRM University-AP</strong> and building XR experiences with <a href="https://www.nexttechlabap.in/">Next Tech Lab</a>. I like the whole process: a rough interaction, a working prototype, and the small performance fixes that make it feel right inside a headset.</p>
+          <p>Hey, I&apos;m <strong>Lakshya</strong>. I have built games and spatial experiences that turn the room around you into part of the interface. My home base is <strong>Unity</strong>; my playground are XR applications.</p>
+          <p>I&apos;m studying Computer Science at <strong>SRM University-AP</strong> and leading <a href="https://www.nexttechlabap.in/">Next Tech Lab&apos;s</a> Pausch Division.Next Tech Lab is QS Awarded, Student lead tech Lab. </p>
         </section>
 
         <section id="work" className={styles.section} aria-labelledby="work-title">
@@ -65,7 +65,7 @@ export default async function HomePage() {
         </section>
 
         <section id="skills" className={styles.section} aria-labelledby="skills-title">
-          <h2 id="skills-title">[ tools of the trade ]</h2>
+          <h2 id="skills-title">[ Tech Stack ]</h2>
           <p className={styles.sectionNote}>The languages, engines, and tools behind my projects.</p>
           <dl className={styles.toolkit}>
             {skillGroups.map((group) => (

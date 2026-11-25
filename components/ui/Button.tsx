@@ -33,6 +33,9 @@ export function Button({
     className,
   );
   if (href) {
+    if (!href.startsWith("/") || href.startsWith("//")) {
+      return <a href={href} className={classes}>{children}</a>;
+    }
     return (
       <Link href={href} className={classes}>
         {children}

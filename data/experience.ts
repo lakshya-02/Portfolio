@@ -24,24 +24,24 @@ export const experienceItems: ExperienceItem[] = [
   },
   {
     role: "Club Volunteer",
-    org: "Intercollegiate XR (ICXR) - Global XR Community (Remote)",
-    period: "Dec 2025 - Present",
-    kind: "work",
+    org: "Intercollegiate XR (ICXR) - Global XR Community ",
+    period: "Dec 2025 - Oct 2026",
+    kind: "volunteer",
     bullets: [
       "Represented Next Tech Lab across 50+ XR clubs.",
-      "Supported cross-campus immersive technology initiatives.",
+      "Supported cross-campus immersive tech initiatives.",
     ],
   },
   {
     role: "Board Member",
     org: "Next Tech Lab, SRM University-AP - Amaravati, India (On-Site)",
     period: "Oct 2024 - Present",
-    kind: "work",
+    kind: "volunteer",
     link: "https://www.nexttechlabap.in/",
     bullets: [
-      "Developed XR projects and game prototypes across multiple game engines.",
-      "Designed intuitive spatial interactions and optimized XR experiences for performance and usability.",
-      "Mentored developers and led the organization of Game Jams and Hackathons.",
+      "Currently serving as a Board member/Syndicate of QS Awarded Student lead tech Lab.",
+      "Developed VR/MR projects and game prototypes across multiple game engines.",
+      "Mentored developers and conducted National level Game Jams and Hackathons.",
     ],
   },
   {
