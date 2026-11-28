@@ -24,9 +24,12 @@ export interface SiteConfig {
   notFound: { title: string; body: string; cta: string };
 }
 
+export type ProjectCategory = "XR" | "Games" | "General";
+
 export interface Project {
   slug: string;
   title: string;
+  category: ProjectCategory;
   summary: string;
   description: string[];
   tags: string[];

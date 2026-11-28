@@ -1,75 +1,29 @@
 import type { SkillGroup } from "@/lib/types";
 
+// Text only. Language logos appear in the GitHub section (components/sections/TechLogos.tsx).
 export const skillGroups: SkillGroup[] = [
   {
-    category: "Unity & Game Development",
-    skills: [
-      "Unity 6",
-      "Gameplay Programming",
-      "Unity Input System",
-      "ProBuilder",
-      "ShaderLab",
-      "Object Pooling",
-    ],
+    category: "Game development",
+    skills: ["Unity 6", "Gameplay programming", "Unity Input System", "ProBuilder", "ShaderLab", "Object pooling"],
   },
   {
-    category: "XR & Spatial Computing",
-    skills: [
-      "Meta XR SDK",
-      "Meta Quest 3",
-      "OpenXR",
-      "Spatial Interaction",
-      "AR Foundation",
-      "Google ARCore",
-      "Vuforia Engine",
-    ],
+    category: "XR & spatial computing",
+    skills: ["Meta XR SDK", "Meta Quest 3", "OpenXR", "Spatial interaction", "AR Foundation", "Google ARCore", "Vuforia Engine"],
   },
   {
-    category: "AI & Agentic Systems",
-    skills: [
-      "AI Agents",
-      "LLM Integration",
-      "Model Context Protocol (MCP)",
-      "Tool Calling",
-      "Unity Sentis",
-      "Computer Vision",
-      "OpenCV",
-    ],
+    category: "AI & agents",
+    skills: ["AI agents", "LLM integration", "Model Context Protocol (MCP)", "Tool calling", "Unity Sentis"],
   },
   {
-    category: "Programming Languages",
-    skills: [
-      "C#",
-      "C++",
-      "C",
-      "Python",
-      "JavaScript",
-      "TypeScript",
-      "Java",
-      "SQL",
-    ],
+    category: "Web & graphics",
+    skills: ["WebXR", "Three.js", "Immersive Web SDK (IWSDK)", "MindAR", "GLSL"],
   },
   {
-    category: "Web & Real-Time Graphics",
-    skills: [
-      "WebXR",
-      "Three.js",
-      "Immersive Web SDK (IWSDK)",
-      "MindAR",
-      "GLSL",
-      "HTML5",
-      "CSS3",
-    ],
+    category: "Tools",
+    skills: ["Git & GitHub", "Blender", "RenderDoc", "SideQuest", "Android Debug Bridge (ADB)"],
   },
   {
-    category: "Development Tools & Technologies",
-    skills: [
-      "Git & GitHub",
-      "Blender",
-      "RenderDoc",
-      "MongoDB",
-      "SideQuest",
-      "Android Debug Bridge (ADB)",
-    ],
+    category: "Data & vision",
+    skills: ["SQL", "MongoDB", "Computer vision", "OpenCV"],
   },
 ];

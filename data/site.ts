@@ -3,26 +3,25 @@ import type { SiteConfig } from "@/lib/types";
 export const siteConfig: SiteConfig = {
   name: "Lakshya Singh",
   role: "XR & Game Developer",
-  tagline:
-    "I design immersive XR experiences and make some Game to feel real, even when it's not.",
+  tagline: "I build mixed reality apps and games in Unity, mostly for Meta Quest.",
   skipToContent: "Skip to content",
   navLinks: [
-    { label: "Home", href: "/" },
-    { label: "Projects", href: "/#work" },
+    { label: "home", href: "/" },
+    { label: "projects", href: "/projects" },
   ],
   socialLinks: [
+    { label: "Email", href: "mailto:lakshya.singh2706@gmail.com" },
     { label: "GitHub", href: "https://github.com/lakshya-02" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/lakshya-singh-2833a2328" },
-    { label: "Email", href: "mailto:lakshya.singh2706@gmail.com" },
   ],
-  projectsPage: { eyebrow: "Archive", title: "All projects" },
+  projectsPage: { eyebrow: "portfolio / projects", title: "Projects" },
   projectDetail: {
-    back: "All projects",
-    live: "Visit live site",
-    source: "View source",
+    back: "all projects",
+    live: "open it",
+    source: "source",
   },
   contact: {
-    body: "Open to internships, research, and XR software engineering opportunities. Let's build something great together.",
+    body: "I'm looking for internships, research positions and XR engineering roles.",
     fields: {
       name: "Name",
       email: "Email",
@@ -32,7 +31,7 @@ export const siteConfig: SiteConfig = {
   },
   notFound: {
     title: "Page not found",
-    body: "The page you're looking for doesn't exist or has moved. Head back to the start.",
-    cta: "Back home",
+    body: "Nothing lives at this address. It may have moved.",
+    cta: "back home",
   },
 };
