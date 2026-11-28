@@ -1,64 +1,29 @@
 import type { SkillGroup } from "@/lib/types";
 
+// Text only. Language logos appear in the GitHub section (components/sections/TechLogos.tsx).
 export const skillGroups: SkillGroup[] = [
   {
-    category: "Languages",
-    icon: "code",
-    skills: [
-      "C",
-      "C++",
-      "C#",
-      "Python",
-      "JavaScript",
-      "SQL",
-    ],
+    category: "Game development",
+    skills: ["Unity 6", "Gameplay programming", "Unity Input System", "ProBuilder", "ShaderLab", "Object pooling"],
   },
   {
-    category: "Unity & games",
-    icon: "monitor",
-    skills: [
-      "Unity 6",
-      "New Input System",
-      "ProBuilder",
-      "ShaderLab",
-      "Object Pooling",
-    ],
+    category: "XR & spatial computing",
+    skills: ["Meta XR SDK", "Meta Quest 3", "OpenXR", "Spatial interaction", "AR Foundation", "Google ARCore", "Vuforia Engine"],
   },
   {
-    category: "AR / VR / MR",
-    icon: "monitor",
-    skills: [
-      "Meta Quest SDK",
-      "OpenXR",
-      "AR Foundation",
-      "Google ARCore",
-      "Vuforia SDK",
-      "IWSDK",
-    ],
+    category: "AI & agents",
+    skills: ["AI agents", "LLM integration", "Model Context Protocol (MCP)", "Tool calling", "Unity Sentis"],
   },
   {
     category: "Web & graphics",
-    icon: "code",
-    skills: [
-      "WebXR",
-      "Three.js",
-      "MindAR",
-      "GLSL",
-      "HTML",
-      "CSS",
-    ],
+    skills: ["WebXR", "Three.js", "Immersive Web SDK (IWSDK)", "MindAR", "GLSL"],
   },
   {
-    category: "Tools & workflow",
-    icon: "wrench",
-    skills: [
-      "Git & GitHub",
-      "Blender",
-      "OpenCV",
-      "MongoDB",
-      "RenderDoc",
-      "SideQuest",
-      "ADB",
-    ],
+    category: "Tools",
+    skills: ["Git & GitHub", "Blender", "RenderDoc", "SideQuest", "Android Debug Bridge (ADB)"],
+  },
+  {
+    category: "Data & vision",
+    skills: ["SQL", "MongoDB", "Computer vision", "OpenCV"],
   },
 ];

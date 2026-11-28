@@ -3,56 +3,25 @@ import type { SiteConfig } from "@/lib/types";
 export const siteConfig: SiteConfig = {
   name: "Lakshya Singh",
   role: "XR & Game Developer",
-    headline: "Reality is just the",
-    headlineAccent: "Starting Point ",
-    heroEyebrow: "XR Developer • Unity Engineer • Reality Optional",
-    tagline:
-      "I design immersive XR experiences and make some Game in Unity to feel real, even when it's not.",
-  email: "lakshya.singh2706@gmail.com",
-  footerNote: "Building immersive experiences through Unity and Extended Reality.",
+  tagline: "I build mixed reality apps and games in Unity, mostly for Meta Quest.",
   skipToContent: "Skip to content",
   navLinks: [
-    { label: "Home", href: "/" },
-    { label: "Projects", href: "/projects" },
+    { label: "home", href: "/" },
+    { label: "projects", href: "/projects" },
   ],
   socialLinks: [
-    { label: "GitHub", href: "https://github.com/lakshya-02", icon: "github" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/lakshya-singh-2833a2328", icon: "linkedin" },
-    { label: "Email", href: "mailto:lakshya.singh2706@gmail.com", icon: "mail" },
+    { label: "Email", href: "mailto:lakshya.singh2706@gmail.com" },
+    { label: "GitHub", href: "https://github.com/lakshya-02" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/lakshya-singh-2833a2328" },
   ],
-  heroCtas: {
-    primary: { label: "View projects", href: "/projects" },
-    secondary: { label: "Get in touch", href: "/#contact" },
-  },
-  heroImage: {
-    src: "/images/tarot-card.jpg",
-    alt: "Illustrated portrait in a red robe against a pink-lit backdrop",
-  },
-  sections: {
-    about: { eyebrow: "About", title: "About Me" },
-    projects: { eyebrow: "Projects", title: "Selected work" },
-    skills: { eyebrow: "Skills", title: "Tech Stack" },
-    experience: { eyebrow: "Experience", title: "Experience" },
-    contact: { eyebrow: "Contact", title: "Let's build something" },
-  },
-  about: {
-    paragraphs: [
-      "Hello, I'm **Lakshya**.",
-      "My journey into game development began with a simple fascination: the ability to create worlds that didn't exist before. That curiosity quickly turned into a passion for building interactive experiences, pushing me deeper into creativity and innovation.",
-      "As I explored further, I discovered **Augmented Reality**, which completely changed the way I looked at technology. Soon after, I stepped into the world of **Virtual Reality** and there has been no looking back ever since.",
-      "By degree, I'm just another Computer Science student. But by grace, I'm an XR developer who believes reality is only the starting point. I love turning possibility into immersive experiences that people can feel.",
-    ],
-  },
-  projectsCta: { label: "View all projects", href: "/projects" },
-  projectsPage: { eyebrow: "Archive", title: "All projects" },
+  projectsPage: { eyebrow: "portfolio / projects", title: "Projects" },
   projectDetail: {
-    back: "All projects",
-    live: "Visit live site",
-    source: "View source",
+    back: "all projects",
+    live: "open it",
+    source: "source",
   },
   contact: {
-    body: "Open to internships, research, and XR software engineering opportunities. Let's build something great together.",
-    formNote: "",
+    body: "I'm looking for internships, research positions and XR engineering roles.",
     fields: {
       name: "Name",
       email: "Email",
@@ -62,7 +31,7 @@ export const siteConfig: SiteConfig = {
   },
   notFound: {
     title: "Page not found",
-    body: "The page you're looking for doesn't exist or has moved. Head back to the start.",
-    cta: "Back home",
+    body: "Nothing lives at this address. It may have moved.",
+    cta: "back home",
   },
 };
