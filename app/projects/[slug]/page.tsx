@@ -1,88 +1,72 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
-import { projects, getProjectBySlug } from "@/data/projects";
+import { projects, categorySlugs, getCategoryBySlug, getProjectBySlug } from "@/data/projects";
 import { siteConfig } from "@/data/site";
-import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
-import { getYouTubeEmbedUrl } from "@/lib/utils";
+import { ProjectsIndex } from "@/components/projects/ProjectsIndex";
+import styles from "@/app/home.module.css";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+  return [...projects.map((project) => project.slug), ...categorySlugs].map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: ProjectPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
+  const category = getCategoryBySlug(slug);
+  if (category) return { title: `${category} projects`, description: `${category} projects by Lakshya Singh.` };
   const project = getProjectBySlug(slug);
-  if (!project) {
-    return { title: siteConfig.notFound.title };
-  }
+  if (!project) return { title: siteConfig.notFound.title };
   return { title: project.title, description: project.summary };
+}
+
+function liveLabel(url: string): string {
+  if (url.includes("itch.io")) return "play on itch.io";
+  if (url.includes("youtube.com") || url.includes("youtu.be")) return "watch the demo";
+  return siteConfig.projectDetail.live;
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
+  // /projects/xr, /projects/games and /projects/general share this route with project slugs.
+  const category = getCategoryBySlug(slug);
+  if (category) return <ProjectsIndex category={category} archive={{ more: [], privateNames: [] }} />;
   const project = getProjectBySlug(slug);
-  if (!project) {
-    notFound();
-  }
-  const embedUrl = project.links.live
-    ? getYouTubeEmbedUrl(project.links.live)
-    : null;
+  if (!project) notFound();
+
+  const index = projects.indexOf(project);
+  const previous = projects[index - 1];
+  const next = projects[index + 1];
+
   return (
-    <article className="py-24 sm:py-32">
-      <Container className="max-w-3xl">
-        <Link
-          href="/projects"
-          className="inline-flex items-center gap-2 text-sm text-ink-muted transition-colors hover:text-ink"
-        >
-          <ArrowLeft className="size-4" />
-          {siteConfig.projectDetail.back}
-        </Link>
-        <span className="mt-10 block text-sm text-ink-muted">{project.year}</span>
-        <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-6xl">
-          {project.title}
-        </h1>
-        <p className="mt-6 text-lg leading-relaxed text-ink-muted">
-          {project.summary}
-        </p>
-        <hr className="my-12 border-line" />
-        <div className="space-y-6 leading-relaxed text-ink-muted">
-          {project.description.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+    <div className={styles.home}>
+      <article className={`${styles.inner} ${styles.page}`}>
+        <Link className={styles.more} href="/projects">[ ← {siteConfig.projectDetail.back} ]</Link>
+        <header className={styles.pageHeader}>
+          <p className={styles.eyebrow}>[ {project.category.toLowerCase()} / {project.year} ]</p>
+          <h1>{project.title}</h1>
+          <p>{project.summary}</p>
+        </header>
+
+        <div className={styles.detailBody}>
+          {project.description.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>
-        {embedUrl && (
-          <div className="mt-12 aspect-video w-full overflow-hidden rounded-xl border border-line">
-            <iframe
-              src={embedUrl}
-              title={`${project.title} demo`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="size-full"
-            />
-          </div>
-        )}
-        <div className="mt-12 flex flex-wrap gap-4">
-          {project.links.live && !embedUrl && (
-            <Button href={project.links.live}>
-              {siteConfig.projectDetail.live}
-            </Button>
-          )}
-          {project.links.source && (
-            <Button href={project.links.source} variant="outline">
-              {siteConfig.projectDetail.source}
-            </Button>
-          )}
-        </div>
-      </Container>
-    </article>
+
+        <p className={styles.stackLine}>built with <span>{project.tags.join(" / ")}</span></p>
+
+        <nav className={styles.detailLinks} aria-label="Project links">
+          {project.links.source && <a href={project.links.source}>[ {siteConfig.projectDetail.source} ↗ ]</a>}
+          {project.links.live && <a href={project.links.live}>[ {liveLabel(project.links.live)} ↗ ]</a>}
+        </nav>
+
+        <nav className={styles.pager} aria-label="More projects">
+          {previous && <Link href={`/projects/${previous.slug}`}>← {previous.title}</Link>}
+          {next && <Link href={`/projects/${next.slug}`}>{next.title} →</Link>}
+        </nav>
+      </article>
+    </div>
   );
 }

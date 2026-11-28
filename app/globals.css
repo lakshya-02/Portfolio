@@ -1,42 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-void: #0a0a0a;
-  --color-line: #2a2a33;
-  --color-ink: #f7f7fa;
-  --color-ink-muted: #b6b6c2;
-  --color-pink: #ff2e88;
-  --color-blue: #3fa9ff;
-  --color-yellow: #ffd60a;
-  --color-green: #3ee089;
-  --color-orange: #ff9640;
-  --color-red: #ff5757;
+  /* Deep navy-black ground, white/slate text, one warm orange accent. */
+  --color-void: #060913;
+  --color-line: #1f2838;
+  --color-ink: #eef1f7;
+  --color-ink-soft: #c3cbd9;
+  --color-ink-muted: #94a0b4;
+  --color-accent: #ff8a3d;
+  --color-accent-soft: #ffb27a;
 
-  --font-display: var(--font-ibm-plex-mono), "Courier New", monospace;
-  --font-body: var(--font-ibm-plex-mono), "Courier New", monospace;
+  /* SF Pro / SF Mono on Apple devices, Inter / JetBrains Mono elsewhere. */
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", var(--font-inter), system-ui, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--font-inter), system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, var(--font-jetbrains-mono), Consolas, monospace;
+  --font-body: var(--font-mono);
+}
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 
 ::selection {
-  background: #b5d4ad;
-  color: #000000;
-}
-
-.text-stroke {
-  -webkit-text-stroke: 1.5px var(--color-ink);
-  color: transparent;
-}
-
-@supports not (-webkit-text-stroke: 1px #000) {
-  .text-stroke {
-    color: var(--color-ink);
-  }
-}
-
-.glow-pink {
-  box-shadow: 0 0 32px -6px rgba(255, 46, 136, 0.55);
-}
-
-.glow-blue {
-  box-shadow: 0 0 28px -6px rgba(63, 169, 255, 0.5);
+  background: #ff8a3d;
+  color: #060913;
 }
